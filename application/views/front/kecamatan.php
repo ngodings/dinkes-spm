@@ -284,15 +284,15 @@
 		
 				var id_kel = parseFloat(feature.properties.id_kel);
 
-				$.getJSON(base_url+"peta/corona_kel/"+id_kel, function(data){
-				
+				$.getJSON("http://localhost:81/api-spm/api/covidKel?id_kel="+id_kel, function(data){
+					//COVID
 					var info_bidang ="<h4 style='text-align:center'>Akumulasi Data Pasien COVID-19</h4>";
 					info_bidang+="<h5 style='text-align:center'>Data Kelurahan " + data.nama_kelurahan + "</h5>"
 					info_bidang+="<hr size = '1px'> "
-					info_bidang+="<h6>Jumlah Pasien di seluruh Kasus : " + data.jumlah_pasien + "</h6>"
-					info_bidang+="<h6>Jumlah Pasien Aktif : " + data.jumlah_pasien_aktif + "</h6>"
-					info_bidang+="<h6>Jumlah Pasien Sembuh : " + data.jumlah_pasien_sembuh + "</h6>"
-					info_bidang+="<h6>Jumlah Pasien Meninggal : " + data.jumlah_pasien_die + "</h6>"
+					info_bidang+="<h6>Jumlah Pasien di seluruh Kasus : " + data.covid_all + "</h6>"
+					info_bidang+="<h6>Jumlah Pasien Aktif : " + data.covid_aktif + "</h6>"
+					info_bidang+="<h6>Jumlah Pasien Sembuh : " + data.covid_sembuh + "</h6>"
+					info_bidang+="<h6>Jumlah Pasien Meninggal : " + data.covid_die + "</h6>"
 					info_bidang+="<hr size = '1px'> "
 					//dalam perawatan
 					info_bidang+="<h6>Data Pasien Terkonfirmasi: Dirawat (Kasus Aktif) <br></h6> "

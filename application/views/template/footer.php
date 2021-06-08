@@ -138,15 +138,15 @@
 		
 				var id_kec = parseFloat(feature.properties.id_kec);
 
-				$.getJSON(base_url+"peta/corona/"+id_kec, function(data){
+				$.getJSON("http://localhost:81/api-spm/api/countData?id_kec="+id_kec, function(data){
 				
 					var info_bidang ="<h4 style='text-align:center'>Akumulasi Data Pasien COVID-19</h4>";
 					info_bidang+="<h6 style='text-align:center'>Data Kecamatan " + data.nama_kecamatan + "</h6>"
 					
-					info_bidang+="<h6><br>Jumlah Seluruh Kasus 		: " + data.jumlah_pasien + "</h6>";
-					info_bidang+="<h6>Jumlah Pasien Aktif 	: " + data.aktif + "</h6>";
-					info_bidang+="<h6>Jumlah Pasien Sembuh 	: " + data.sembuh + "</h6>";
-					info_bidang+="<h6>Jumlah Pasien Meninggal	: " + data.die + "</h6>";
+					info_bidang+="<h6><br>Jumlah Seluruh Kasus 		: " + data.covid_all + "</h6>";
+					info_bidang+="<h6>Jumlah Pasien Aktif 	: " + data.covid_aktif + "</h6>";
+					info_bidang+="<h6>Jumlah Pasien Sembuh 	: " + data.covid_sembuh + "</h6>";
+					info_bidang+="<h6>Jumlah Pasien Meninggal	: " + data.covid_die + "</h6>";
 					info_bidang+="<a href='<?=base_url()?>peta/bidang_detail/'"+id_kec+"'></a>";
 					info_bidang+="<div style='width:100%;text-align:center;margin-top:10px;'><a href='<?=base_url()?>peta/bidang_detail/"+id_kec+"'> Detail </a></div>";
 					layer.bindPopup(info_bidang, {
