@@ -1,2 +1,2 @@
-# dinkes-spm
-sistem penyakit menular dengan peta layer dengan rest api
+# web-gis-leaflet
+Trying to study about GIS.
